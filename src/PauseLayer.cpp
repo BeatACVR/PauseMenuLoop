@@ -128,11 +128,6 @@ class $modify(MyPauseLayer, PauseLayer) {
 		emptyBtn->setID("settings"_spr);
 		emptyBtn->setUserObject("alphalaneous.tooltips/tooltip", CCString::create("PauseMenuLoop Settings"));
 
-		auto settingsBtn = CCMenuItemSpriteExtra::create(emptyBtn, this, menu_selector(MyPauseLayer::onModSettings));
-		if (auto menu = getChildByID("left-button-menu")) {
-			menu->addChild(settingsBtn);
-			menu->updateLayout();
-		}
 		if (!mod->getSettingValue<bool>("enabled")) return;
 
 		manager->sound->setLoopCount(-1);
